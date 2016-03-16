@@ -1,8 +1,6 @@
 package com.person.name;
 
-import com.person.Gender;
-
-public class Name {
+public class Name implements NameFormat {
     private final String firstName;
     private final String lastName;
 
@@ -11,25 +9,23 @@ public class Name {
         this.lastName = lastName;
     }
 
-    private String casualName() {
+    public String withPrefix(String format) {
+        String name = "";
+        if (format.equals("firstNameFirst"))
+            name = firstNameFirstformat();
+        if (format.equals("lastNameFirst"))
+            name = lastNameFirstformat();
+        return name;
+    }
+
+
+    @Override
+    public String firstNameFirstformat() {
         return String.format("%s %s", firstName, lastName);
     }
 
-    private String formalName() {
-        return String.format("%s, %s", lastName , firstName);
+    @Override
+    public String lastNameFirstformat() {
+        return String.format("%s, %s", lastName, firstName);
     }
-
-    public String withPrefix(Gender gender, String format) {
-        String name = "";
-        if (format.equals("-c"))
-            name = casualName();
-        if (format.equals("-f"))
-            name = formalName();
-        return addPrefix(name, gender);
-    }
-
-    private String addPrefix(String name, Gender gender) {
-        return gender + " " + name;
-    }
-
 }

@@ -7,11 +7,11 @@ import com.person.name.Name;
 
 public class Guest {
     private Address address;
-    private int age;
+    private Age age;
     private Gender gender;
     private Name name;
 
-    public Guest(Name name, Gender gender, int age, Address address) {
+    public Guest(Name name, Gender gender, Age age, Address address) {
         this.name = name;
         this.gender = gender;
         this.age = age;
@@ -19,7 +19,7 @@ public class Guest {
     }
 
     public boolean isLegalToConsumeAlcohol(int legalAge) {
-        return age > legalAge;
+        return age.isPermitted(legalAge);
     }
 
     public boolean isOfSameCountry(Country countryName) {
@@ -31,6 +31,6 @@ public class Guest {
     }
 
     public String representName(String nameFormat) {
-            return name.withPrefix(gender,nameFormat);
+            return String.format("%s %s",gender,name.withPrefix(nameFormat));
     }
 }

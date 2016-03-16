@@ -33,7 +33,7 @@ public class Guests {
             Name name = new Name(record[0], record[1]);
             Address address = new Address(new City(record[4]), new State(record[5]), new Country(record[6]));
             Gender gender = Gender.valueOf(record[2].toUpperCase());
-            int age = Integer.parseInt(record[3]);
+            Age age = new Age(Integer.parseInt(record[3]));
             guest = new Guest(name, gender, age, address);
             guests.add(guest);
         }

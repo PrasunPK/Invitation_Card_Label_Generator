@@ -5,14 +5,14 @@ import com.guest.Guest;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Decoration {
+public class Decorator {
 
     private String separator;
     private String cornerDecor;
     private String sideDecor;
     private String topDecor;
 
-    public Decoration(Character[] decors) {
+    public Decorator(Character[] decors) {
         this.separator = decors[0]+"";
         this.cornerDecor = decors[1]+"";
         this.sideDecor = decors[2]+"";

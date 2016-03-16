@@ -1,6 +1,6 @@
 package app;
 
-import com.decor.Decoration;
+import com.decor.Decorator;
 import com.guest.Guest;
 import com.guest.Guests;
 import com.io.RecordReader;
@@ -26,9 +26,12 @@ public class LabelPrinter {
 
         Validator validator = new Validator(filters);
         Guest[] validatedGuests = validator.validate(list);
+
+//        Label label = new Label();
+//        Decorator decorator = new Decorator(label);
         
         Character[] decorators = {' ', '+', '|', '-'};
-        Decoration decor = new Decoration(decorators);
+        Decorator decor = new Decorator(decorators);
 
         String[] decoratedNames = decor.decorateAll(validatedGuests, nameFormat);
         ResultPrinter printer = new ResultPrinter();

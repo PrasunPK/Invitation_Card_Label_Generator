@@ -1,5 +1,6 @@
 package com.parser;
 
+import com.guest.Age;
 import com.guest.Guest;
 import com.guest.Guests;
 import com.person.*;
@@ -24,10 +25,10 @@ public class OptionHandlerTest {
     @Before
     public void setUp() throws Exception {
         list = new Guests();
-        g1 = new Guest(new Name("Julius", "Barrows"), Gender.FEMALE, 18, new Address(new City("Veda haven"), new State("Vermont"), new Country("Macedonia")));
-        g2 = new Guest(new Name("Brandt", "Huel"), Gender.MALE, 25, new Address(new City("West Shanna"), new State("Illinois"), new Country("Macedonia")));
-        g3 = new Guest(new Name("Velma", "Bergstrom"), Gender.MALE, 24, new Address(new City("Katlynn view"), new State("Vermont"), new Country("Macedonia")));
-        g4 = new Guest(new Name("Melody", "Dooley"), Gender.FEMALE, 31, new Address(new City("West Shanna"), new State("Vermont"), new Country("Bangladesh")));
+        g1 = new Guest(new Name("Julius", "Barrows"), Gender.FEMALE, new Age(18), new Address(new City("Veda haven"), new State("Vermont"), new Country("Macedonia")));
+        g2 = new Guest(new Name("Brandt", "Huel"), Gender.MALE, new Age(25), new Address(new City("West Shanna"), new State("Illinois"), new Country("Macedonia")));
+        g3 = new Guest(new Name("Velma", "Bergstrom"), Gender.MALE, new Age(24), new Address(new City("Katlynn view"), new State("Vermont"), new Country("Macedonia")));
+        g4 = new Guest(new Name("Melody", "Dooley"), Gender.FEMALE, new Age(31), new Address(new City("West Shanna"), new State("Vermont"), new Country("Bangladesh")));
         list.add(g1);
         list.add(g2);
         list.add(g3);
